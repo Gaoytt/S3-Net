@@ -20,17 +20,12 @@ A Spatial-Spectral-Statistical Learning Framework for Fine-Grained UAV Maritime 
 </p>
 
 
-<p align="center">
-<img src="assets/S3-Net.pdf" width="95%">
-</p>
-
-
 ---
 
 # 📌 Overview
 
 
-UAV-based maritime rescue detection is challenging due to:
+UAV-based maritime rescue detection remains challenging due to:
 
 - extremely small object scales,
 - complex maritime backgrounds,
@@ -71,11 +66,13 @@ Together, these components enable S³-Net to achieve accurate detection of small
 
 
 <p align="center">
-<img src="assets/framework.png" width="100%">
+
+[View framework.pdf](assets/framework.pdf)
+
 </p>
 
 
-The proposed framework adopts a scale-adaptive architecture with enhanced high-resolution feature representation for fine-grained maritime targets.
+The overall architecture of S³-Net integrates spatial, spectral, and statistical feature learning components to improve the representation capability for fine-grained UAV maritime rescue detection.
 
 
 ---
@@ -120,15 +117,49 @@ The generalization capability of S³-Net is further evaluated on TinyPerson and 
 
 ---
 
-# 🔍 Visualization
+# 📈 Comparison with Existing Methods
 
 
 <p align="center">
-<img src="assets/visualization.png" width="95%">
+
+[View comparison.pdf](assets/comparison.pdf)
+
 </p>
 
 
-Visualization results demonstrate that S³-Net provides more accurate predictions and focuses more effectively on small targets under complex maritime backgrounds.
+Comparison results demonstrate that S³-Net achieves superior detection performance compared with representative object detectors.
+
+S³-Net obtains an AP of **44.8%** on the SeaDronesSee v2 validation set while maintaining a compact model size of **2.5M parameters**.
+
+
+---
+
+# 🔍 Detection Visualization
+
+
+<p align="center">
+
+[View detection_visualization.pdf](assets/detection_visualization.pdf)
+
+</p>
+
+
+Qualitative detection results demonstrate that S³-Net maintains robust performance under challenging UAV maritime scenarios, including small objects, dense distributions, and complex backgrounds.
+
+
+---
+
+# 🔥 Feature Activation Visualization
+
+
+<p align="center">
+
+[View heatmap_visualization.pdf](assets/heatmap_visualization.pdf)
+
+</p>
+
+
+Feature activation visualization demonstrates that S³-Net produces more focused responses on target regions while suppressing irrelevant background information.
 
 
 ---
@@ -139,8 +170,9 @@ Visualization results demonstrate that S³-Net provides more accurate prediction
 The current repository provides:
 
 - project overview,
-- framework visualization,
-- qualitative detection results.
+- model architecture,
+- quantitative results,
+- visualization examples.
 
 
 The complete implementation, including:
@@ -152,4 +184,3 @@ The complete implementation, including:
 - pretrained models,
 
 will be publicly released after the paper acceptance.
-

@@ -66,9 +66,7 @@ Together, these components enable S³-Net to achieve accurate detection of small
 
 
 <p align="center">
-
-[View framework.pdf](assets/framework.pdf)
-
+<img src="assets/framework.png" width="100%">
 </p>
 
 
@@ -121,9 +119,7 @@ The generalization capability of S³-Net is further evaluated on TinyPerson and 
 
 
 <p align="center">
-
-[View comparison.pdf](assets/comparison.pdf)
-
+<img src="assets/comparison.png" width="95%">
 </p>
 
 
@@ -138,9 +134,7 @@ S³-Net obtains an AP of **44.8%** on the SeaDronesSee v2 validation set while m
 
 
 <p align="center">
-
-[View detection_visualization.pdf](assets/detection_visualization.pdf)
-
+<img src="assets/detection_visualization.png" width="95%">
 </p>
 
 
@@ -153,9 +147,7 @@ Qualitative detection results demonstrate that S³-Net maintains robust performa
 
 
 <p align="center">
-
-[View heatmap_visualization.pdf](assets/heatmap_visualization.pdf)
-
+<img src="assets/heatmap_visualization.png" width="95%">
 </p>
 
 

@@ -134,7 +134,7 @@ S³-Net obtains an AP of **44.8%** on the SeaDronesSee v2 validation set while m
 
 
 <p align="center">
-<img src="assets/comparision_detection.png" width="95%">
+<img src="assets/comparision_detect.png" width="95%">
 </p>
 
 

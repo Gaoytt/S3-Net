@@ -21,7 +21,7 @@ A Spatial-Spectral-Statistical Learning Framework for Fine-Grained UAV Maritime 
 
 
 <p align="center">
-<img src="assets/teaser.png" width="95%">
+<img src="assets/S3-Net.pdf" width="95%">
 </p>
 
 

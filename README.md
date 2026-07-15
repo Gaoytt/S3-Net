@@ -1,11 +1,10 @@
-# S3-Net
 # S³-Net: Spatial-Spectral-Statistical Learning for Fine-Grained UAV Maritime Rescue Detection
 
 
 <p align="center">
 
 <b>
-A Lightweight and Scale-Adaptive Detector for Small-Scale Maritime Rescue Targets in UAV Imagery
+A Lightweight and Scale-Adaptive Detector for Fine-Grained UAV Maritime Rescue Detection
 </b>
 
 <br><br>
@@ -18,10 +17,6 @@ A Lightweight and Scale-Adaptive Detector for Small-Scale Maritime Rescue Target
 <img src="https://img.shields.io/badge/Code-Coming%20Soon-blue">
 </a>
 
-<a href="">
-<img src="https://img.shields.io/badge/License-MIT-green">
-</a>
-
 </p>
 
 
@@ -32,64 +27,45 @@ A Lightweight and Scale-Adaptive Detector for Small-Scale Maritime Rescue Target
 
 ---
 
-## 📌 Overview
+# 📌 Overview
 
-Unmanned Aerial Vehicle (UAV)-based maritime rescue detection faces significant challenges, including:
+UAV-based maritime rescue detection is challenging due to:
 
 - extremely small object scales,
-- complex background interference,
-- severe appearance variations,
-- limited computational resources for edge deployment.
+- complex maritime backgrounds,
+- significant appearance variations,
+- limited discriminative features.
 
-
-To address these challenges, we propose **S³-Net**, a spatial-spectral-statistical learning framework designed for fine-grained UAV maritime rescue detection.
+To address these challenges, we propose **S³-Net**, a spatial-spectral-statistical learning framework for fine-grained UAV maritime rescue detection.
 
 
 S³-Net introduces three key components:
 
-- **SAM-S2D**  
-  *Spatial Attention Modulated Space-to-Depth module*  
-  Enhances spatial representation while preserving fine-grained target information.
 
-- **DS-C3k2-FSAS**  
-  *Depthwise Separable Frequency-Enhanced Bottleneck with Frequency-Spectral Adaptive Selection*  
-  Explores frequency-domain characteristics to improve feature discrimination for small targets.
+### 🔹 SAM-S2D
+**Spatial Attention Modulated Space-to-Depth**
 
-- **SAGA**  
-  *Statistically-Adaptive Gated Attention module*  
-  Utilizes statistical feature descriptors for adaptive feature recalibration.
+Enhances spatial representation while preserving detailed information of small-scale targets.
 
 
-Together, these components provide improved detection accuracy and deployment efficiency for UAV maritime rescue scenarios.
+### 🔹 DS-C3k2-FSAS
+**Depthwise Separable Frequency-Enhanced Bottleneck with Frequency-Spectral Adaptive Selection**
+
+Explores frequency-domain characteristics to improve feature discrimination under complex backgrounds.
 
 
----
+### 🔹 SAGA
+**Statistically-Adaptive Gated Attention**
 
-# 🔥 Highlights
-
-✨ **Scale-Adaptive Architecture**
-
-A redesigned multi-scale detection architecture focusing on high-resolution features for tiny maritime objects.
+Introduces statistical feature descriptors for adaptive feature refinement.
 
 
-✨ **Spatial-Spectral Feature Enhancement**
-
-Combines spatial attention and frequency-domain modeling to capture complementary target characteristics.
-
-
-✨ **Statistical Adaptive Attention**
-
-Introduces statistical descriptors to improve feature selection under complex backgrounds.
-
-
-✨ **Edge Deployment Friendly**
-
-Designed with lightweight components and validated on edge computing platforms.
+Together, these components enable S³-Net to achieve improved detection accuracy with a compact model size.
 
 
 ---
 
-# 🏗️ Network Architecture
+# 🏗️ Framework
 
 
 <p align="center">
@@ -97,82 +73,83 @@ Designed with lightweight components and validated on edge computing platforms.
 </p>
 
 
-The overall framework consists of:
-
-- backbone feature extraction,
-- spatial-spectral enhancement,
-- statistical adaptive attention,
-- scale-adaptive detection heads.
+The proposed framework adopts a scale-adaptive architecture with enhanced high-resolution feature representation for small maritime targets.
 
 
 ---
 
-# 📊 Qualitative Results
+# 📊 Performance
+
+
+## SeaDronesSee v2
+
+
+S³-Net is evaluated on the SeaDronesSee v2 validation set.
+
+
+Compared with the baseline YOLOv13-S, S³-Net achieves:
+
+- **+8.3 AP improvement**
+- **+10.3 AR$_{10}$ improvement**
+- reducing parameters from **9.0M to 2.5M**
+
+
+| Method | AP | AP$_{50}$ | AP$_{75}$ | AR$_1$ | AR$_{10}$ | Params |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| YOLOv13-S | 36.5 | 63.2 | 36.4 | 28.6 | 42.8 | 9.0M |
+| **S³-Net (Ours)** | **44.8** | **77.2** | **44.6** | **33.6** | **53.1** | **2.5M** |
+
+
+---
+
+## Cross-Dataset Generalization
+
+
+The generalization capability of S³-Net is further evaluated on TinyPerson and AFO datasets.
+
+
+| Dataset | Method | AP | AP$_{50}$ | AP$_{75}$ | AR$_1$ | AR$_{10}$ |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| TinyPerson | YOLOv13-S | 5.8 | 16.1 | 3.3 | 2.0 | 6.2 |
+| | **S³-Net** | **8.4** | **24.3** | **4.5** | **2.2** | **8.1** |
+| AFO | YOLOv13-S | 25.0 | 53.0 | 17.6 | 17.0 | 33.3 |
+| | **S³-Net** | **26.6** | **55.0** | **21.5** | **18.0** | **34.8** |
+
+
+---
+
+# 🔍 Visualization
 
 
 <p align="center">
-<img src="assets/qualitative_results.png" width="95%">
+<img src="assets/visualization.png" width="95%">
 </p>
 
 
-S³-Net demonstrates robust detection performance under challenging UAV maritime environments, including:
-
-- tiny targets,
-- dense object distributions,
-- complex ocean backgrounds.
+Visualization results demonstrate that S³-Net produces more accurate detections and focuses more effectively on small targets under complex maritime backgrounds.
 
 
 ---
 
-# 🔍 Visualization Analysis
+# 📂 Repository Status
 
 
-<p align="center">
-<img src="assets/gradcam.png" width="95%">
-</p>
+The current repository provides:
 
-
-Visualization results show that S³-Net focuses more effectively on target regions while suppressing irrelevant background responses.
-
-
----
-
-# 📈 Performance
-
-
-Detailed quantitative comparisons, ablation studies, and deployment benchmarks are provided in the paper.
-
-
-| Model | Dataset | mAP | FPS |
-|:---:|:---:|:---:|:---:|
-| YOLO baseline | SeaDronesSee | - | - |
-| S³-Net | SeaDronesSee | - | - |
-
-
-*(Complete results will be updated after publication.)*
-
-
----
-
-# 🚀 Code Availability
-
-
-The source code is currently being organized.
+- project overview,
+- framework visualization,
+- qualitative results.
 
 
 The complete implementation, including:
 
+- source code,
 - training scripts,
-- inference code,
-- model configuration,
-- pretrained weights,
-- evaluation tools,
-- deployment files,
+- inference tools,
+- configuration files,
+- pretrained models,
 
 will be publicly released after the paper acceptance.
-
-
-Stay tuned!
 
 
 ---
@@ -190,42 +167,4 @@ If you find this work useful, please consider citing:
   journal={Coming Soon},
   year={2026}
 }
-```
-
-
----
-
-# 📅 Roadmap
-
-
-- [x] Repository initialization
-- [x] Framework visualization
-- [x] Qualitative examples
-
-Future:
-
-- [ ] Source code release
-- [ ] Pretrained models
-- [ ] Training pipeline
-- [ ] Inference toolkit
-- [ ] ONNX/TensorRT deployment
-
-
----
-
-# 📄 License
-
-
-This project will be released under the MIT License after publication.
-
-
----
-
-# 📬 Contact
-
-
-For questions regarding this project, please contact:
-
-```
-Coming Soon
 ```

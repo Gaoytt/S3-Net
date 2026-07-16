@@ -46,7 +46,7 @@ SAM-S2D enhances spatial representation while preserving detailed information of
 
 
 ### 🔹 DS-C3k2-FSAS  
-**Depthwise Separable Frequency-Enhanced Bottleneck with Frequency-Spectral Adaptive Selection**
+**hybrid spatial-frequency feature extraction block**
 
 DS-C3k2-FSAS explores frequency-domain characteristics to improve feature discrimination under complex backgrounds.
 
@@ -119,7 +119,7 @@ The generalization capability of S³-Net is further evaluated on TinyPerson and 
 
 
 <p align="center">
-<img src="assets/comparison_models.png" width="90%">
+<img src="assets/comparison_models.png" width="50%">
 </p>
 
 
